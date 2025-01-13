@@ -4,6 +4,7 @@ import com.cryptomorin.xseries.XMaterial;
 import com.google.common.collect.ImmutableMap;
 import com.iridium.iridiumcore.Item;
 import com.iridium.iridiumskyblock.enhancements.GeneratorEnhancementData;
+import com.iridium.iridiumskyblock.enhancements.RedstoneEnhancementData;
 import com.iridium.iridiumskyblock.enhancements.SizeEnhancementData;
 import com.iridium.iridiumskyblock.enhancements.VoidEnhancementData;
 import com.iridium.iridiumteams.enhancements.Enhancement;
@@ -31,6 +32,12 @@ public class Enhancements extends com.iridium.iridiumteams.configs.Enhancements 
         this.potionEnhancements.get("speed").levels.forEach((integer, potionEnhancementData) -> potionEnhancementData.bankCosts = new ImmutableMap.Builder<String, Double>().put("Crystals", 5.00).build());
         this.potionEnhancements.get("jump").levels.forEach((integer, potionEnhancementData) -> potionEnhancementData.bankCosts = new ImmutableMap.Builder<String, Double>().put("Crystals", 5.00).build());
     }
+
+    public Enhancement<RedstoneEnhancementData> redstoneEnhancement = new Enhancement<>(true, EnhancementType.UPGRADE, new Item(XMaterial.REDSTONE, 4, 1, "&9&lRedstone Upgrade", Arrays.asList(
+        "Test"
+        )), new ImmutableMap.Builder<Integer, RedstoneEnhancementData>()
+                .put(0, new RedstoneEnhancementData(5, 10000, new ImmutableMap.Builder<String, Double>().put("Crystals", 5.00).build(), 10))
+                .build());
 
     public Enhancement<SizeEnhancementData> sizeEnhancement = new Enhancement<>(true, EnhancementType.UPGRADE, new Item(XMaterial.GRASS_BLOCK, 11, 1, "&9&lSize Upgrade", Arrays.asList(
             "&7Need more room to expand? Buy this",

@@ -279,6 +279,7 @@ public class IridiumSkyblock extends IridiumTeams<Island, User> {
         addEnhancement("size", getEnhancements().sizeEnhancement);
         addEnhancement("void", getEnhancements().voidEnhancement);
         addEnhancement("generator", getEnhancements().generatorEnhancement);
+        addEnhancement("redstone", getEnhancements().redstoneEnhancement);
     }
 
     @Override
