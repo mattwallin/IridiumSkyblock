@@ -1,8 +1,10 @@
 package com.iridium.iridiumskyblock.database;
 
+import com.cryptomorin.xseries.XMaterial;
 import com.iridium.iridiumcore.Color;
 import com.iridium.iridiumskyblock.IridiumSkyblock;
 import com.iridium.iridiumskyblock.enhancements.SizeEnhancementData;
+import com.iridium.iridiumskyblock.enhancements.RedstoneEnhancementData;
 import com.iridium.iridiumskyblock.managers.IslandManager;
 import com.iridium.iridiumteams.Rank;
 import com.iridium.iridiumteams.database.Team;
@@ -24,6 +26,7 @@ import java.util.Optional;
 public class Island extends Team {
     @DatabaseField(columnName = "color", canBeNull = false)
     private Color color;
+    private int placedRedstone = 0;
 
     public Island(String name) {
         setName(name);
@@ -34,6 +37,10 @@ public class Island extends Team {
 
     public Island(int id) {
         setId(id);
+    }
+
+    public int getRedStone() {
+        return this.placedRedstone;
     }
 
     @Override
@@ -112,6 +119,12 @@ public class Island extends Team {
             return 50;
         }
         return sizeEnhancementData.size;
+    }
+
+    public boolean isRedstone(XMaterial block) {
+        List<XMaterial> redstoneList = RedstoneEnhancementData.getRedstoneList();
+        
+        return redstoneList.contains(block);
     }
 
     public boolean isInIsland(Location location) {
