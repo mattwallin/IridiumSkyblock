@@ -172,11 +172,11 @@ public class Island extends Team {
 
     public void incrementRedstone() {
         this.placedRedstone++;
-        Bukkit.broadcastMessage(String.valueOf(this.placedRedstone));
+        // Bukkit.broadcastMessage(String.valueOf(this.placedRedstone));
     }
 
     public void decrementRedstone() {
         this.placedRedstone--;
-        Bukkit.broadcastMessage(String.valueOf(this.placedRedstone));
+        // Bukkit.broadcastMessage(String.valueOf(this.placedRedstone));
     }
 }

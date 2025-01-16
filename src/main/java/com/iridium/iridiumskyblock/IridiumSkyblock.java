@@ -179,6 +179,7 @@ public class IridiumSkyblock extends IridiumTeams<Island, User> {
         super.registerListeners();
         Bukkit.getPluginManager().registerEvents(new PlayerMoveListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), this);
         Bukkit.getPluginManager().registerEvents(new BlockFormListener(), this);
         Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(), this);
         Bukkit.getPluginManager().registerEvents(new EnhancementUpdateListener(), this);

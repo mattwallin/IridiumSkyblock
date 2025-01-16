@@ -1,10 +1,9 @@
 package com.iridium.iridiumskyblock.listeners;
 
-import org.bukkit.event.Listener;
-
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
 
 import com.cryptomorin.xseries.XMaterial;
 import com.iridium.iridiumskyblock.IridiumSkyblock;
@@ -14,20 +13,20 @@ import com.iridium.iridiumskyblock.database.User;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class BlockPlaceListener implements Listener {
+public class BlockBreakListener implements Listener {
     
     @EventHandler(ignoreCancelled = true)
-    public void onBlockPlace(BlockPlaceEvent event) {
+    public void onBlockBreak(BlockBreakEvent event) {
         User user = IridiumSkyblock.getInstance().getUserManager().getUser(event.getPlayer());
         XMaterial material = XMaterial.matchXMaterial(event.getBlock().getType());
-        
+
         try {
             Island island = user.getCurrentIsland().get();
             if (island.isRedstone(material)) {
-                island.incrementRedstone();
+                island.decrementRedstone();
             }
         } catch (Exception e) {
-            Bukkit.broadcastMessage("No Island: Place");
+            // Bukkit.broadcastMessage("No Island: Break");
             return;
         }
     }
