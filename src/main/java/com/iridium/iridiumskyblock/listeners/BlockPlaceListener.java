@@ -28,7 +28,9 @@ public class BlockPlaceListener implements Listener {
             if (island.isRedstone(material)) {
                 island.incrementRedstone();
                 if (island.getRedStone() > redstoneEnhancementData.getRedstone()) {
-                    event.getPlayer().sendMessage(StringUtils.color(IridiumSkyblock.getInstance().getMessages().hitRedstoneLimit));
+                    event.getPlayer().sendMessage(StringUtils.color(IridiumSkyblock.getInstance().getMessages().hitRedstoneLimit
+                            .replace("%prefix%", IridiumSkyblock.getInstance().getConfiguration().prefix)
+                    ));
                     island.decrementRedstone();
                     event.setCancelled(true);                    
                 }

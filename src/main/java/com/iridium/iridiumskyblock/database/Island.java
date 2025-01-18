@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
@@ -27,13 +28,15 @@ import java.util.Optional;
 public class Island extends Team {
     @DatabaseField(columnName = "color", canBeNull = false)
     private Color color;
-    private int placedRedstone = 0;
+    @DatabaseField(columnName = "placedRedstone")
+    private static int placedRedstone;
 
     public Island(String name) {
         setName(name);
         setDescription(IridiumSkyblock.getInstance().getConfiguration().defaultDescription);
         setCreateTime(LocalDateTime.now());
         this.color = IridiumSkyblock.getInstance().getConfiguration().defaultBorderColor;
+        Island.placedRedstone = 0;
     }
 
     public Island(int id) {
@@ -41,7 +44,7 @@ public class Island extends Team {
     }
 
     public int getRedStone() {
-        return this.placedRedstone;
+        return Island.placedRedstone;
     }
 
     @Override
@@ -170,10 +173,17 @@ public class Island extends Team {
     }
 
     public void incrementRedstone() {
-        this.placedRedstone++;
+        Island.placedRedstone++;
+        if (Island.placedRedstone % 5 == 0) {
+            Bukkit.broadcastMessage(String.valueOf(Island.placedRedstone));
+        }
     }
 
     public void decrementRedstone() {
-        this.placedRedstone--;
+        Island.placedRedstone--;
+    }
+
+    public void resetRedstone() {
+        Island.placedRedstone = 0;
     }
 }

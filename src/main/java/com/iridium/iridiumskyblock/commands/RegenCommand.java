@@ -88,6 +88,8 @@ public class RegenCommand extends Command<Island, User> {
 
         IridiumSkyblock.getInstance().getIslandManager().clearTeamInventory(island);
 
+        IridiumSkyblock.getInstance().getIslandManager().resetRedstone(island);
+
         IridiumSkyblock.getInstance().getIslandManager().generateIsland(island, schematicConfig).thenRun(() -> Bukkit.getScheduler().runTask(IridiumSkyblock.getInstance(), () -> {
 
             if (IridiumSkyblock.getInstance().getTeamManager().teleport(player, island.getHome(), island)) {

@@ -314,6 +314,10 @@ public class IslandManager extends TeamManager<Island, User> {
         setIslandBiome(island, schematicConfig.end.biome);
     }
 
+    public void resetRedstone(Island island) {
+        island.resetRedstone();
+    }
+
     public CompletableFuture<Void> clearEntities(Island island) {
         return CompletableFuture.runAsync(() -> {
             List<CompletableFuture<Void>> completableFutures = Arrays.asList(
