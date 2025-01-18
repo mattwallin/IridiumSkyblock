@@ -29,6 +29,10 @@ public class RedstoneEnhancementData extends EnhancementData {
         this.redstone = redstone;
     }
 
+    public int getRedstone() {
+        return this.redstone;
+    }
+
     @Override
     public List<Placeholder> getPlaceholders() {
         return Arrays.asList(

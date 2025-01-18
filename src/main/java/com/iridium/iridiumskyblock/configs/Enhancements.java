@@ -36,7 +36,9 @@ public class Enhancements extends com.iridium.iridiumteams.configs.Enhancements 
     public Enhancement<RedstoneEnhancementData> redstoneEnhancement = new Enhancement<>(true, EnhancementType.UPGRADE, new Item(XMaterial.REDSTONE, 4, 1, "&9&lRedstone Upgrade", Arrays.asList(
         "Test"
         )), new ImmutableMap.Builder<Integer, RedstoneEnhancementData>()
-                .put(0, new RedstoneEnhancementData(5, 10000, new ImmutableMap.Builder<String, Double>().put("Crystals", 5.00).build(), 10))
+                .put(0, new RedstoneEnhancementData(0, 0, new ImmutableMap.Builder<String, Double>().put("Crystals", 5.00).build(), 5))
+                .put(1, new RedstoneEnhancementData(0, 0, new ImmutableMap.Builder<String, Double>().put("Crystals", 5.00).build(), 10))
+                .put(2, new RedstoneEnhancementData(0, 0, new ImmutableMap.Builder<String, Double>().put("Crystals", 5.00).build(), 15))
                 .build());
 
     public Enhancement<SizeEnhancementData> sizeEnhancement = new Enhancement<>(true, EnhancementType.UPGRADE, new Item(XMaterial.GRASS_BLOCK, 11, 1, "&9&lSize Upgrade", Arrays.asList(

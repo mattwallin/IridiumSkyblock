@@ -1,6 +1,5 @@
 package com.iridium.iridiumskyblock.listeners;
 
-import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -26,7 +25,6 @@ public class BlockBreakListener implements Listener {
                 island.decrementRedstone();
             }
         } catch (Exception e) {
-            // Bukkit.broadcastMessage("No Island: Break");
             return;
         }
     }

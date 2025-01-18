@@ -13,7 +13,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
@@ -172,11 +171,9 @@ public class Island extends Team {
 
     public void incrementRedstone() {
         this.placedRedstone++;
-        // Bukkit.broadcastMessage(String.valueOf(this.placedRedstone));
     }
 
     public void decrementRedstone() {
         this.placedRedstone--;
-        // Bukkit.broadcastMessage(String.valueOf(this.placedRedstone));
     }
 }

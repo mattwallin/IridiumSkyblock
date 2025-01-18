@@ -8,6 +8,7 @@ public class Messages extends com.iridium.iridiumteams.configs.Messages {
         teamCreated = "%prefix% &7Island Creation Completed!";
     }
 
+    public String hitRedstoneLimit = "%prefix% &7You have hit the max amount of redstone, upgrade for more.";
     public String voidTeleport = "%prefix% &7You have fallen off your island. Teleporting home...";
     public String itemsString = "%amount% %item_name%";
     public String voidLostItems = "%prefix% &7You've lost %items%!";
