@@ -17,7 +17,8 @@ import java.util.Map;
 public class BiomeOverviewGUI extends BackGUI {
 
     public BiomeOverviewGUI(Player player) {
-        super(IridiumSkyblock.getInstance().getInventories().biomeOverviewGUI.background, player, IridiumSkyblock.getInstance().getInventories().backButton);
+        super(IridiumSkyblock.getInstance().getInventories().biomeOverviewGUI.background, player);
+        // IridiumSkyblock.getInstance().getInventories().backButton
     }
 
     @NotNull

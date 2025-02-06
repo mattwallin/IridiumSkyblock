@@ -24,7 +24,8 @@ public class BiomeCategoryGUI extends BackGUI {
     private final Biomes.BiomeCategory biomeCategory;
 
     public BiomeCategoryGUI(String categoryName, Player player) {
-        super(IridiumSkyblock.getInstance().getInventories().biomeCategoryGUI.background, player, IridiumSkyblock.getInstance().getInventories().backButton);
+        super(IridiumSkyblock.getInstance().getInventories().biomeCategoryGUI.background, player);
+        // IridiumSkyblock.getInstance().getInventories().backButton
         this.categoryName = categoryName;
         this.biomeCategory = IridiumSkyblock.getInstance().getBiomes().categories.get(categoryName);
     }

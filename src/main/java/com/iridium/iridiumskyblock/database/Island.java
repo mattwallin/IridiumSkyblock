@@ -174,9 +174,6 @@ public class Island extends Team {
 
     public void incrementRedstone() {
         Island.placedRedstone++;
-        if (Island.placedRedstone % 5 == 0) {
-            Bukkit.broadcastMessage(String.valueOf(Island.placedRedstone));
-        }
     }
 
     public void decrementRedstone() {

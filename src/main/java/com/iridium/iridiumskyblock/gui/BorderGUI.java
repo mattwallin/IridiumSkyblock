@@ -17,8 +17,8 @@ public class BorderGUI extends BackGUI {
     public BorderGUI(Player player) {
         super(
                 IridiumSkyblock.getInstance().getInventories().islandBorderGUI.background,
-                player,
-                IridiumSkyblock.getInstance().getInventories().backButton
+                player
+                // IridiumSkyblock.getInstance().getInventories().backButton
         );
     }
 

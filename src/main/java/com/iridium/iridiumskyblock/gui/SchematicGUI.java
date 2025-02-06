@@ -25,8 +25,8 @@ public abstract class SchematicGUI extends BackGUI {
     public SchematicGUI(Player player) {
         super(
                 IridiumSkyblock.getInstance().getInventories().islandSchematicGUI.background,
-                player,
-                IridiumSkyblock.getInstance().getInventories().backButton
+                player
+                // IridiumSkyblock.getInstance().getInventories().backButton
         );
     }
 

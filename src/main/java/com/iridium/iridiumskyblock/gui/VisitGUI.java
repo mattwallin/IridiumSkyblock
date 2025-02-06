@@ -27,8 +27,8 @@ public class VisitGUI extends PagedGUI<Island> {
                 IridiumSkyblock.getInstance().getInventories().visitGUI.background,
                 iridiumTeams.getInventories().previousPage,
                 iridiumTeams.getInventories().nextPage,
-                player,
-                iridiumTeams.getInventories().backButton
+                player
+                // iridiumTeams.getInventories().backButton
         );
         this.iridiumTeams = iridiumTeams;
     }

@@ -25,8 +25,10 @@ dependencies {
     implementation("org.jetbrains:annotations:26.0.1")
     implementation("com.j256.ormlite:ormlite-core:6.1")
     implementation("com.j256.ormlite:ormlite-jdbc:6.1")
-    implementation("com.iridium:IridiumTeams:2.5.12")
     implementation("commons-lang:commons-lang:2.6")
+    implementation(files("/home/matt/Projects/iridium-teams/build/libs/IridiumTeams-2.5.12.jar"))
+
+    // implementation("com.iridium:IridiumTeams:2.5.12")
 
     // Other dependencies that are not required or already available at runtime
     compileOnly("org.projectlombok:lombok:1.18.36")
